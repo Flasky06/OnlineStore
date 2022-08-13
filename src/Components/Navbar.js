@@ -12,19 +12,18 @@ function Navbar() {
       <Navigation>
         <CLink to={"/account"}>
           <VscAccount />
-          <h6>Account</h6>
         </CLink>
         <CLink to={"/checkoutpage"}>
           <GrCart />
-          <h6>{cartItems.length}</h6>
+          <span>{cartItems.length === 0 ? "" : cartItems.length}</span>
         </CLink>
       </Navigation>
     </div>
   );
 }
 const Navigation = styled.div`
+  margin-left: 10%;
   display: flex;
-  width: 30%;
   justify-content: center;
   align-items: center;
 `;
@@ -38,6 +37,17 @@ const CLink = styled(NavLink)`
   svg {
     height: 3rem;
     width: 3rem;
+  }
+  span {
+    background-color: #e76d15;
+    color: white;
+    height: 1rem;
+    width: 1rem;
+
+    border-radius: 50%;
+    vertical-align: super;
+    display: flex;
+    justify-content: center;
   }
 `;
 export default Navbar;

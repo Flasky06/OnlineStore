@@ -56,6 +56,9 @@ export const CartContextProvider = ({ children }) => {
   const handleClearCart = () => {
     setCartItems([]);
   };
+  const handleRemoveItem = (product) => {
+    setCartItems(cartItems.filter((item) => item.id !== product.id));
+  };
   return (
     <CartContext.Provider
       value={{
@@ -65,6 +68,7 @@ export const CartContextProvider = ({ children }) => {
         handleReduceProduct,
         subtotal,
         handleClearCart,
+        handleRemoveItem,
       }}
     >
       {children}

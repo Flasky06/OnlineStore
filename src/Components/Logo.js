@@ -12,7 +12,7 @@ function Logo() {
 }
 
 const Slink = styled(NavLink)`
-  width: 30%;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,8 +20,9 @@ const Slink = styled(NavLink)`
   color: black;
 
   svg {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
+    color: #e76d15;
   }
   p {
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;

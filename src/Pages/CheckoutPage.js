@@ -13,5 +13,6 @@ function CheckoutPage() {
 }
 const CartPage = styled.div`
   display: flex;
+  margin: 0% 10%;
 `;
 export default CheckoutPage;

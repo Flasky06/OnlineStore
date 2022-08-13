@@ -12,7 +12,7 @@ function Product() {
         return (
           <Card key={item.id}>
             <img src={item.image} alt={item.title} /> <p>{item.title}</p>
-            <p>Ksh {item.price}</p>
+            <h4>Ksh {item.price}</h4>
             <button
               onClick={() => {
                 HandleAddProduct(item);
@@ -70,9 +70,9 @@ const Card = styled.div`
       rgba(0, 0, 0, 0.07) 0px 16px 16px;
     transition: 1.2s;
     border-radius: 1rem;
+    color: white;
+    background-color: #e76d15;
     :hover {
-      color: white;
-      background-color: black;
       width: 60%;
       transform: translateY(1px) translateX(1px) translateZ(1px);
       transform: scale(1.1);
