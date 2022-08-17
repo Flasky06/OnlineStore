@@ -4,18 +4,26 @@ import Navbar from "./Navbar";
 
 function TopBar() {
   return (
-    <TopContainer>
-      <Logo />
-      <Navbar />
-    </TopContainer>
+    <DivTop>
+      <TopContainer>
+        <Logo />
+        <Navbar />
+      </TopContainer>
+    </DivTop>
   );
 }
-const TopContainer = styled.div`
+const DivTop = styled.div`
+  width: 100%;
+  background: white;
   top: 0;
   position: sticky;
+  z-index: 5;
+`;
+const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 80%;
   margin: 2rem 10%;
 `;

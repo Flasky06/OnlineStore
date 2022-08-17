@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { memo } from "react";
 
 function Categories() {
   return (
@@ -17,9 +18,6 @@ const CategoryLinks = styled.div`
   display: flex;
   justify-content: center;
   position: sticky;
-
-  ul {
-  }
 `;
 const Slink = styled(NavLink)`
   text-decoration: none;
@@ -41,4 +39,4 @@ const Slink = styled(NavLink)`
   }
 `;
 
-export default Categories;
+export default memo(Categories);

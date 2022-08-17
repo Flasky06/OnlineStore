@@ -6,6 +6,7 @@ import { CartContextProvider } from "./CartContext";
 import Account from "./Pages/Account";
 import TopBar from "./Components/TopBar";
 import CheckoutPage from "./Pages/CheckoutPage";
+import ProductDetails from "./Pages/ProductDetails";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
             <Route path="/category/:type" element={<Category />} />
             <Route path="/checkoutpage" element={<CheckoutPage />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/details/:productId" element={<ProductDetails />} />
+            {/* <Route path="*" element={<Home />} /> */}
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

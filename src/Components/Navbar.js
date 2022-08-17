@@ -43,7 +43,6 @@ const CLink = styled(NavLink)`
     color: white;
     height: 1rem;
     width: 1rem;
-
     border-radius: 50%;
     vertical-align: super;
     display: flex;

@@ -13,18 +13,20 @@ function Checkout() {
 
   return (
     <CheckoutPage>
-      <CartTitle>
-        <h3>Cart Items</h3>
+      <DivTop>
+        <CartTitle>
+          <h3>Cart Items</h3>
 
-        {cartItems.length >= 1 && (
-          <CartBtn>
-            <button onClick={handleClearCart}>
-              <FaTrash />
-              Clear Cart Items
-            </button>
-          </CartBtn>
-        )}
-      </CartTitle>
+          {cartItems.length >= 1 && (
+            <CartBtn>
+              <button onClick={handleClearCart}>
+                <FaTrash />
+                Clear Cart Items
+              </button>
+            </CartBtn>
+          )}
+        </CartTitle>
+      </DivTop>
       {cartItems.length === 0 && <div>No items added to cart</div>}
 
       {cartItems.length !== 0 &&
@@ -68,9 +70,16 @@ const CheckoutPage = styled.div`
   width: 70%;
   margin: 0% 10%;
 `;
+const DivTop = styled.div`
+  width: 100%;
+  background: white;
+  position: sticky;
+  z-index: 4;
+`;
 const CartTitle = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 const CartBtn = styled.div`
   button {

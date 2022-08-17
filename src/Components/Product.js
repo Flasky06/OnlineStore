@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-
 import styled from "styled-components";
 import { CartContext } from "../CartContext";
+import { Link, NavLink } from "react-router-dom";
 
 function Product() {
   const { Products, HandleAddProduct } = useContext(CartContext);
@@ -11,8 +11,10 @@ function Product() {
       {Products.map((item) => {
         return (
           <Card key={item.id}>
-            <img src={item.image} alt={item.title} /> <p>{item.title}</p>
-            <h4>Ksh {item.price}</h4>
+            <Slink to={/details/ + item.id}>
+              <img src={item.image} alt={item.title} /> <p>{item.title}</p>
+              <h4>Ksh {item.price}</h4>
+            </Slink>
             <button
               onClick={() => {
                 HandleAddProduct(item);
@@ -65,9 +67,6 @@ const Card = styled.div`
     text-overflow: ellipsis;
   }
   button {
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
-      rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
-      rgba(0, 0, 0, 0.07) 0px 16px 16px;
     transition: 1.2s;
     border-radius: 1rem;
     color: white;
@@ -83,6 +82,10 @@ const Card = styled.div`
     transform: scale(1.1);
     z-index: 1;
   }
+`;
+const Slink = styled(NavLink)`
+  text-decoration: none;
+  color: black;
 `;
 
 export default Product;

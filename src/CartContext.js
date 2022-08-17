@@ -10,7 +10,6 @@ export const CartContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = () => {
       axios.get("https://fakestoreapi.com/products?limit=10").then((res) => {
-        console.log(res.data);
         setProducts(res.data);
       });
     };
@@ -18,8 +17,9 @@ export const CartContextProvider = ({ children }) => {
   }, []);
 
   const HandleAddProduct = (product) => {
+    console.log(product);
     const exist = cartItems.find((item) => item.id === product.id);
-    console.log(exist);
+
     if (exist) {
       console.log(exist);
 
@@ -49,10 +49,10 @@ export const CartContextProvider = ({ children }) => {
         )
       );
   };
-  const subtotal = cartItems.reduce(
-    (price, item) => price + item.quantity * item.price,
-    0
-  );
+  const subtotal = cartItems
+    .reduce((price, item) => price + item.quantity * item.price, 0)
+    .toFixed(2);
+
   const handleClearCart = () => {
     setCartItems([]);
   };

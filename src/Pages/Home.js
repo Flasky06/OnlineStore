@@ -12,5 +12,7 @@ function Home() {
 }
 const HomePage = styled.div`
   margin: 0% 5%;
+  position: relative;
+  top: 0;
 `;
 export default Home;
